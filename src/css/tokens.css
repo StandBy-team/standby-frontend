@@ -1,0 +1,76 @@
+/* Design tokens for the redesigned areas (index, header, footer). Sub pages still use the legacy rules. */
+:root {
+  --c-primary: #1f5fc4;
+  --c-primary-hover: #194fa6;
+  --c-primary-soft: #eaf1fc;
+  --c-primary-tint: #dfe8f7;
+  --c-primary-dark: #14244a;
+  --c-navy: #0f1b3a;
+  --c-navy-deep: #0a1330;
+  --c-accent: #f58220;
+  --c-accent-soft: #fff1e4;
+  --c-danger: #e0412f;
+  --c-bg: #fff;
+  --c-bg-soft: #f5f6f8;
+  --c-line: #e3e6eb;
+  --c-line-strong: #cfd4dc;
+  --c-text: #1b1d22;
+  --c-text-sub: #5b616e;
+  --c-text-mute: #858b97;
+
+  --radius-s: 8px;
+  --radius-m: 12px;
+  --radius-l: 20px;
+  --radius-xl: 32px;
+
+  --shadow-s: 0 1px 3px rgba(15, 27, 58, 0.08);
+  --shadow-m: 0 6px 20px rgba(15, 27, 58, 0.1);
+  --shadow-l: 0 16px 48px rgba(15, 27, 58, 0.18);
+
+  --wide-max: 1280px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur: 0.2s;
+}
+
+.wide {
+  position: relative;
+  max-width: var(--wide-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.focus-ring:focus-visible,
+.wide a:focus-visible,
+.wide button:focus-visible,
+.wide select:focus-visible,
+.full-menu a:focus-visible,
+.full-menu button:focus-visible,
+.notice-dialog a:focus-visible,
+.notice-dialog button:focus-visible,
+.chatbot-fab a:focus-visible,
+.chatbot-fab button:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 2px;
+}
+
+/* base.css gives focused buttons a 1px border; redesigned buttons draw borders with box-shadow instead. */
+.wide button:focus-visible,
+.full-menu button:focus-visible,
+.notice-dialog button:focus-visible,
+.chatbot-fab button:focus-visible { border: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur: 0s; }
+}
